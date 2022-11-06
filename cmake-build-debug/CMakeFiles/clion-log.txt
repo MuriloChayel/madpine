@@ -1,0 +1,7 @@
+"C:\Program Files\JetBrains\CLion 2022.1.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.1.2/bin/ninja/win/ninja.exe" -G Ninja -S E:\PROJS\CPP\sandbox -B E:\PROJS\CPP\sandbox\cmake-build-debug
+-- Targets: flecs;flecs_static
+-- Including Win32 support
+-- GLM: Version 0.9.9.9
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/PROJS/CPP/sandbox/cmake-build-debug
