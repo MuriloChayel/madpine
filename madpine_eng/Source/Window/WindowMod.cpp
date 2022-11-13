@@ -6,6 +6,32 @@
 #include "iostream"
 
 namespace Window{
+
+    void WindowProfile(){
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glEnable( GL_BLEND );
+        glClearColor(239.0 / 255.0, 252.0 / 255.0, 224.0 / 255.0, 1.0f );
+        glClear(GL_COLOR_BUFFER_BIT);
+    }
+    void UpdateModelViewProjectionOnSprite(flecs::world& ecs){
+        auto sprite_q = ecs.filter<SpriteRenderer::SpriteID>();
+        auto camera_e = ecs.filter<Camera::CameraID>().first();
+
+        sprite_q.each([camera_e](SpriteRenderer::SpriteID& sp){
+            glUseProgram(sp.shader_id);
+            glBindVertexArray(sp.sprite_id);
+            glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
+
+            GLint modelViewProjectionLoc = glGetUniformLocation(sp.shader_id, "mvp");
+            glUniformMatrix4fv(modelViewProjectionLoc, 1, GL_FALSE, glm::value_ptr(camera_e.get_ref<Camera::CameraID>()->mvp));
+
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D, sp.texture_id);
+            GLint textureProjectionLoc = glGetUniformLocation(sp.texture_id, "textureSampler");
+            glUniform1i(textureProjectionLoc, 0);
+        });
+    }
+
     Window::Window(flecs::world &ecs) {
         assert(glfwInit() != GL_FALSE);
 
@@ -14,7 +40,7 @@ namespace Window{
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-
+        //INIT_WINDOW
         ecs.observer<WindowID, Components::Size, Components::Name>()
             .event(flecs::OnSet)
             .each([](flecs::entity e, WindowID& w, Components::Size& size, Components::Name& name){
@@ -25,32 +51,14 @@ namespace Window{
                 e.add<Components::Inputable>();
         });
 
+        //UPDATE_WINDOW
         ecs.system<WindowID>()
             .each([&ecs](flecs::entity e, WindowID& w) {
-
                 if(!glfwWindowShouldClose(w.w)){
-                    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-                    glEnable( GL_BLEND );
-                    glClearColor(239.0 / 255.0, 252.0 / 255.0, 224.0 / 255.0, 1.0f );
-                    glClear(GL_COLOR_BUFFER_BIT);
 
-                    auto sprite_q = ecs.filter<SpriteRenderer::SpriteID>();
-                    auto camera_e = ecs.filter<Camera::CameraID>().first();
+                    WindowProfile();
+                    UpdateModelViewProjectionOnSprite(ecs);
 
-                    sprite_q.each([camera_e](SpriteRenderer::SpriteID& sp){
-                        glUseProgram(sp.shader_id);
-                        glBindVertexArray(sp.sprite_id);
-                        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr);
-
-                        GLint modelViewProjectionLoc = glGetUniformLocation(sp.shader_id, "mvp");
-                        glUniformMatrix4fv(modelViewProjectionLoc, 1, GL_FALSE, glm::value_ptr(camera_e.get_ref<Camera::CameraID>()->mvp));
-
-                        glActiveTexture(GL_TEXTURE0);
-                        glBindTexture(GL_TEXTURE_2D, sp.texture_id);
-                        GLint textureProjectionLoc = glGetUniformLocation(sp.texture_id, "textureSampler");
-                        glUniform1i(textureProjectionLoc, 0);
-
-                    });
                     glfwSwapBuffers(w.w);
                     glfwPollEvents();
                 }
@@ -60,8 +68,5 @@ namespace Window{
                     ecs.quit();
                 }
             });
-
-
-
     }
 }

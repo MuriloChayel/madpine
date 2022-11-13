@@ -23,7 +23,6 @@ InputWorld::InputWorld(flecs::world &ecs){
             .each([this](Window::WindowID& w, Components::Inputable){
                 //glfwSetMouseButtonCallback(w.w, Mouse_btns);
                 glfwSetKeyCallback(w.w, this->KeyBoard);
-                std::cout << "cadastro" << std::endl;
 
             });
     ecs.system< Camera::CameraID>()

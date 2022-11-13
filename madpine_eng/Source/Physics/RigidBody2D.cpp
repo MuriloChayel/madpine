@@ -11,13 +11,13 @@ namespace RigidBody2D{
         ecs.observer<Physics::RigidBd2D>()
                 .event(flecs::OnAdd)
                 .each([](flecs::entity e, Physics::RigidBd2D) {
-                    e.add<Physics::Velocity>();
+                    e.set<Physics::Velocity>({0,0});
                     e.set<Physics::Acceleration>({0,-0.98});
                 });
 
-        ecs.system<SpriteRenderer::SpriteID, Physics::Velocity, Physics::Acceleration, Renderer::QuadShape>()
+        ecs.system <Physics::Velocity, Physics::Acceleration, Renderer::QuadShape>()
                 .kind(flecs::PostUpdate)
-                .each([&](SpriteRenderer::SpriteID& sp, Physics::Velocity& v, Physics::Acceleration& a, Renderer::QuadShape& qs){
+                .each([&](Physics::Velocity& v, Physics::Acceleration& a, Renderer::QuadShape& qs){
 //
                     v.x = v.x + a.x * ecs.delta_time();
                     v.y = v.y + a.y * ecs.delta_time();

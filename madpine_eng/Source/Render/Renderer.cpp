@@ -1,8 +1,8 @@
 //
 // Created by Murilo on 31/10/2022.
 //
-
 #include "Renderer.h"
+
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 

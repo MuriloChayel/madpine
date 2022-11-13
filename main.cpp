@@ -8,8 +8,8 @@ int main() {
     ecs.import<Transform::Transform>();
 
     ecs.import<Renderer::Quad>();
-
     ecs.import<SpriteRenderer::Sprite>();
+
     ecs.import<RigidBody2D::RigidBody2D>();
 
     ecs.import<Material::ApplyShader>();
@@ -21,10 +21,9 @@ int main() {
         .set<Components::Name>({"Game Window"});
 
     ecs.entity("Player")
-        .add<Components::Transform>()
-        .add<SpriteRenderer::SpriteID>()
+        .add<Components::Transform>() // ok
         .add<Renderer::QuadShape>()
-
+        .add<SpriteRenderer::SpriteID>()
         .add<Physics::RigidBd2D>();
 
     ecs.entity("MainCamera")
