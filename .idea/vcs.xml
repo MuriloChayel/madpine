@@ -3,8 +3,11 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/madpine_eng/deps/glew" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/madpine_eng/deps/glew/glew-cmake" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/madpine_eng/deps/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/madpine_eng/deps/glfw/glfw" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/madpine_eng/deps/glm" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/madpine_eng/deps/stb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/madpine_eng/deps/stb/stb/stb" vcs="Git" />
   </component>
 </project>

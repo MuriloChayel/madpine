@@ -1,0 +1,289 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						4,
+						6
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"build" : "deps/flecs-3.1.0",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-deps.flecs-3.1.0-Debug-aa292c91ad1cfb33804e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "deps/flecs-3.1.0",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "deps/glfw",
+					"childIndexes" : 
+					[
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-deps.glfw-Debug-15a4a3eb2cd1e80f71c2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 2,
+					"source" : "deps/glfw",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "deps/glfw/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-deps.glfw.src-Debug-8880f26cb629cc0dda86.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "deps/glfw/src",
+					"targetIndexes" : 
+					[
+						5,
+						8
+					]
+				},
+				{
+					"build" : "deps/glm",
+					"childIndexes" : 
+					[
+						5
+					],
+					"jsonFile" : "directory-deps.glm-Debug-89a945cb137bb741e035.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 3,
+					"source" : "deps/glm"
+				},
+				{
+					"build" : "deps/glm/glm",
+					"jsonFile" : "directory-deps.glm.glm-Debug-c7a4f9d444c41aa3dc7a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 4,
+					"projectIndex" : 3,
+					"source" : "deps/glm/glm"
+				},
+				{
+					"build" : "deps/glew/build/cmake",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-deps.glew.build.cmake-Debug-5e2e72044a4550adecec.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 4,
+					"source" : "deps/glew/build/cmake",
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						9
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "madpine",
+					"targetIndexes" : 
+					[
+						6
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "flecs",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						4,
+						5
+					],
+					"name" : "glm",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "glew",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4,
+						9
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "flecs::@b87fdbb747804056f49f",
+					"jsonFile" : "target-flecs-Debug-3be06343e70e124e9fa3.json",
+					"name" : "flecs",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "flecs_static::@b87fdbb747804056f49f",
+					"jsonFile" : "target-flecs_static-Debug-7e8235bf98caa7ec37ea.json",
+					"name" : "flecs_static",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "glew::@04fb83b81ee7ddcba9ed",
+					"jsonFile" : "target-glew-Debug-1e0f8ce152b44bb97f99.json",
+					"name" : "glew",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "glew_s::@04fb83b81ee7ddcba9ed",
+					"jsonFile" : "target-glew_s-Debug-fa8f2bb14d6440b40c90.json",
+					"name" : "glew_s",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "glewinfo::@04fb83b81ee7ddcba9ed",
+					"jsonFile" : "target-glewinfo-Debug-4825f343792465c7ef74.json",
+					"name" : "glewinfo",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glfw::@c7b1059c348ca70b25fe",
+					"jsonFile" : "target-glfw-Debug-4dc9bd184b8308cb4ee2.json",
+					"name" : "glfw",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "madpine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-madpine-Debug-79848fc9276916ad7017.json",
+					"name" : "madpine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@9f6bdc1e5386c9c3898b",
+					"jsonFile" : "target-uninstall-Debug-f281e31a7918c88e3f62.json",
+					"name" : "uninstall",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "update_mappings::@c7b1059c348ca70b25fe",
+					"jsonFile" : "target-update_mappings-Debug-242cbcb75b59bc5819c5.json",
+					"name" : "update_mappings",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "visualinfo::@04fb83b81ee7ddcba9ed",
+					"jsonFile" : "target-visualinfo-Debug-8a2e10a2da9a8ae44e3f.json",
+					"name" : "visualinfo",
+					"projectIndex" : 4
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/murilo/Desktop/muliro/C++/madpine/madpine_eng/cmake-build-debug",
+		"source" : "C:/Users/murilo/Desktop/muliro/C++/madpine/madpine_eng"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -1,4 +1,4 @@
-# Install script for directory: E:/PROJS/CPP/sandbox/madpine_eng/deps/glm/glm
+# Install script for directory: C:/Users/murilo/Desktop/muliro/C++/madpine/madpine_eng/deps/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2022.1.2/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2022.2.4/bin/mingw/bin/objdump.exe")
 endif()
 

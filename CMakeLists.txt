@@ -16,5 +16,5 @@ add_custom_command(TARGET sandbox POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/bin/glew32d.dll" "${CMAKE_BINARY_DIR}"
         COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/madpine_eng/Shaders" "${CMAKE_BINARY_DIR}/Shaders"
         COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/Sprites" "${CMAKE_BINARY_DIR}/Sprites"
-
-        )
+        COMMAND ${CMAKE_COMMAND} -E copy "${CMAKE_BINARY_DIR}/madpine_eng/deps/flecs-3.1.0/libflecs.dll" "${CMAKE_BINARY_DIR}"
+    )
